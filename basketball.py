@@ -5,6 +5,10 @@ class Player:
         self.position = player_data['position']
         self.team = player_data['team']
 
+    def display_player(self):
+        keys = vars(self)
+        print(keys)
+
     @classmethod
     def get_team(cls, team_list):
         new_team = []
@@ -55,5 +59,7 @@ for player in players:
     new_team.append(Player(player))
 
 print(new_team)
+for player in new_team:
+    player.display_player()
 
 print(Player.get_team(players))
